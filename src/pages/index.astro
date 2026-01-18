@@ -22,13 +22,15 @@ const { banner, features } = homepage.data;
         <div class="lg:col-7 md:col-9 mb-8 text-center">
           <h1
             set:html={markdownify(banner.title)}
-            class="mb-4 text-h3 lg:text-h1"
+            class="mb-4 text-h3 lg:text-h1 animate-fade-in-up"
+            style="opacity: 0;"
           />
-          <p set:html={markdownify(banner.content)} class="mb-8" />
+          <p set:html={markdownify(banner.content)} class="mb-8 animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0;" />
           {
             banner.button.enable && (
               <a
-                class="btn btn-primary"
+                class="btn btn-primary animate-fade-in-up"
+                style="animation-delay: 0.2s; opacity: 0;"
                 href={banner.button.link}
                 target={
                   banner.button.link.startsWith("http") ? "_blank" : "_self"
@@ -42,13 +44,14 @@ const { banner, features } = homepage.data;
         </div>
         {
           banner.image && (
-            <div class="col-12">
+            <div class="col-12 animate-fade-in-up" style="animation-delay: 0.3s; opacity: 0;">
               <ImageMod
                 src={banner.image}
                 height={380}
                 width={1200}
                 alt="banner"
                 format="webp"
+                class="animate-float-slow"
               />
             </div>
           )
@@ -73,6 +76,7 @@ const { banner, features } = homepage.data;
                 width={520}
                 alt={feature.title}
                 format="webp"
+                class="animate-float-slow"
               />
             </div>
             <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
@@ -80,8 +84,10 @@ const { banner, features } = homepage.data;
               <p set:html={markdownify(feature.content)} class="mb-8 text-lg" />
               <ul>
                 {feature.bulletpoints.map((bullet: string) => (
-                  <li class="relative mb-4 pl-6">
-                    <FaCheck className={"absolute left-0 top-1.5"} />
+                  <li class="relative mb-4 pl-8 group">
+                    <span class="absolute left-0 top-1 w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                      <FaCheck className="text-brand-primary text-xs" />
+                    </span>
                     <span set:html={markdownify(bullet)} />
                   </li>
                 ))}

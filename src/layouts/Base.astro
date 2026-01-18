@@ -214,5 +214,29 @@ const { title, meta_title, description, image, noindex, canonical } =
       <slot />
     </main>
     <Footer />
+
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+      // Intersection Observer for scroll reveal animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealOnScroll.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with data-reveal attribute
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        revealOnScroll.observe(el);
+      });
+    </script>
   </body>
 </html>
