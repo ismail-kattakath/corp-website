@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "kattakath-technologies-inc",
+    "site": "corp-core-hub",
     "public": "dist",
     "ignore": [
       "firebase.json",
