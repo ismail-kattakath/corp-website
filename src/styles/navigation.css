@@ -31,7 +31,7 @@
 }
 
 .nav-dropdown-list {
-  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded-lg p-2 shadow-lg border border-border dark:border-darkmode-border;
 }
 
 .nav-dropdown-item {
@@ -39,7 +39,7 @@
 }
 
 .nav-dropdown-link {
-  @apply text-text-dark hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary block py-1 font-semibold transition;
+  @apply text-text-dark hover:text-primary hover:bg-light dark:text-darkmode-text dark:hover:text-darkmode-primary dark:hover:bg-darkmode-light block py-2 px-3 rounded font-semibold transition-colors;
 }
 
 /* theme-switcher */

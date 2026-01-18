@@ -19,8 +19,8 @@ const { footer }: { footer: { name: string; url: string }[] } = menu;
         <ul>
           {
             footer.map((menu) => (
-              <li class="m-3 inline-block">
-                <a href={menu.url}>{menu.name}</a>
+              <li class="m-1 inline-block">
+                <a href={menu.url} class="text-text-dark dark:text-darkmode-text-dark hover:text-primary dark:hover:text-darkmode-primary hover:bg-body dark:hover:bg-darkmode-body px-3 py-2 rounded transition-colors">{menu.name}</a>
               </li>
             ))
           }
