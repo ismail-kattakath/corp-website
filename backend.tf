@@ -1,6 +1,9 @@
 terraform {
-  backend "gcs" {
-    bucket = "kattakath-com-firebase-tf-state"
-    prefix = "terraform/state"
+  cloud {
+    organization = "kattakath-technologies-inc"
+
+    workspaces {
+      name = "kattakath-com"
+    }
   }
 }

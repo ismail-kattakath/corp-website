@@ -48,3 +48,7 @@ terraform.rc
 # Sensitive credentials
 terraform.tfvars
 secrets.auto.tfvars
+gcp-terraform-sa.json
+*-sa.json
+*.key.json
+upload-creds.py
