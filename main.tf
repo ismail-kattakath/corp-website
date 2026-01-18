@@ -27,12 +27,9 @@ resource "google_firebase_hosting_site" "site" {
   site_id  = "corp-website-cms"
 }
 
-resource "google_firebase_hosting_custom_domain" "custom_domain" {
-  provider      = google-beta
-  project       = var.google_project_id
-  site_id       = google_firebase_hosting_site.site.site_id
-  custom_domain = var.domain
-}
+# NOTE: Custom domain is managed via Firebase Console due to provider bug
+# See: https://github.com/hashicorp/terraform-provider-google/issues/xxxxx
+# Custom domain: kattakath.com -> corp-website-cms
 
 resource "cloudflare_record" "root_a" {
   zone_id = var.cloudflare_zone_id
