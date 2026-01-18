@@ -21,12 +21,6 @@ provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
 
-resource "google_firebase_hosting_site" "default_site" {
-  provider = google-beta
-  project  = var.google_project_id
-  site_id  = "corp-core-hub"
-}
-
 resource "google_firebase_hosting_site" "site" {
   provider = google-beta
   project  = var.google_project_id
